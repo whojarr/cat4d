@@ -39,12 +39,12 @@
             display: block;
         }
     </style>
-    <h1>AI Create</h1>
+    <h1>AI X3D Genertor</h1>
 
 
     <form action="" method="POST">
         <input id="question" name="question" value="{{ question }}"/>
-        <button type="submit" name="submit" value="create">Update</button>
+        <button type="submit" name="submit" value="create">Generate</button>
         <button type="submit" name="edit" value="edit">Edit</button>
         <span class="hover-container">
             <span class="hover-text">Source Code</span>
@@ -60,10 +60,11 @@
         <input type="hidden" id="source" name="source" value="{{ scene }}"/>
     </form>
 
+    {% if x3d or scene %}
     <div class="x3dcontainer">
         {% if x3d %}
             {{ x3d |safe }}
-        {% else %}
+        {% elif scene %}
             <X3D id='x3d' showStat='false' showLog='false' showProgress='bar'
             version='3.3' noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'
             width="100%" height="600px">
@@ -71,5 +72,6 @@
             </X3D>
         {% endif %}
     </div>
+    {% endif %}
 
 {% endblock %}

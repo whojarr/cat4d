@@ -39,13 +39,14 @@
             display: block;
         }
     </style>
-    <h1>AI Create</h1>
+    <h1>AI X3D Editor</h1>
 
 
     <form action="" method="POST">
         <input id="question" name="question" value="{{ question }}"/>
         <button type="submit" name="submit" value="update">update</button>
         <button type="submit" name="save" value="edit">Save</button>
+        <a href="{{ url_for('ai_create') }}">Back</a>
         <span class="hover-container">
             <span class="hover-text">Source Code</span>
             <span class="tooltip">{{ x3d }}</span>

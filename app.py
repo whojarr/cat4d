@@ -122,6 +122,9 @@ def ai_edit():
                 version='3.3' noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd' \
                 width='100%' height='600px'><Scene>{source}</Scene></X3D>"
 
+        if request.form.get('save') == 'save':
+            print("save x3d")
+
 
         # response = ai_modify(question, x3d)
         if not question == '':

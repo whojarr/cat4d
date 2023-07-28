@@ -1,4 +1,5 @@
 **__pycache__
+.serverless
 node_modules
 .env
 poetry.lock
