@@ -1,0 +1,49 @@
+service: cat4d
+useDotenv: true
+plugins:
+  - serverless-python-requirements
+  - serverless-wsgi
+  - serverless-domain-manager
+package:
+  exclude:
+    - assets/**
+    - static/**
+    - node_modules/**
+    - venv/**
+    - __pycache__/**
+provider:
+  name: aws
+  lambdaHashingVersion: '20200924'
+  runtime: python3.8
+  timeout: 30
+  memorySize: 128
+  stage: '${opt:stage, ''dev''}'
+  region: '${opt:region, ''ap-southeast-2''}'
+  deploymentBucket: ${env:S3_BUCKET}
+  apiGateway:
+    binaryMediaTypes:
+      - '*/*'
+  tags:
+    Product: cat4d
+    environment: '${opt:stage, ''dev''}'
+functions:
+  app:
+    handler: wsgi_handler.handler
+    events:
+      - http: ANY /
+      - http: 'ANY /{proxy+}'
+    environment:
+      OPENAI_API_KEY: ${env:OPENAI_API_KEY}
+custom:
+  wsgi:
+    app: app.app
+    packRequirements: false
+  pythonRequirements:
+    slim: true
+    useDownloadCache: false
+    useStaticCache: false
+  stage: ${self:provider.stage}
+  customDomain:
+    basePath: ''
+    domainName: ${env:APP_DOMAIN}
+    createRoute53Record: true

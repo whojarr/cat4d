@@ -1,0 +1,117 @@
+{% extends "xhtml_base.html" %}
+
+{% block content %}
+
+<X3D profile="Interchange" version="3.3" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd">
+    <head>
+      <meta name="title" content="Escher Steps"/>
+      <meta name="creator" content="Your Name"/>
+      <meta name="description" content="Abstract representation of Escher's Steps in X3D"/>
+      <meta name="generator" content="ChatGPT, OpenAI"/>
+    </head>
+    <Scene>
+      <!-- Viewpoint to set the camera position -->
+      <Viewpoint position="0 5 15" orientation="0 1 0 3.14159" fieldOfView="0.7854" description="Camera"></Viewpoint>
+  
+      <!-- Ground Plane -->
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0.8 0.8 0.8"></Material>
+        </Appearance>
+        <Box size="50 0.1 50"></Box>
+      </Shape>
+  
+      <!-- Steps -->
+      <!-- Step 1 -->
+      <Transform translation="-5 0 -5">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.7 0.2 0.2"></Material>
+          </Appearance>
+          <Box size="10 1 10"></Box>
+        </Shape>
+      </Transform>
+  
+      <!-- Step 2 -->
+      <Transform translation="0 1 0">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.6 0.3 0.3"></Material>
+          </Appearance>
+          <Box size="10 1 10"></Box>
+        </Shape>
+      </Transform>
+  
+      <!-- Step 3 -->
+      <Transform translation="5 2 5">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.5 0.4 0.4"></Material>
+          </Appearance>
+          <Box size="10 1 10"></Box>
+        </Shape>
+      </Transform>
+  
+      <!-- Step 4 -->
+      <Transform translation="10 3 0">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.4 0.5 0.5"></Material>
+          </Appearance>
+          <Box size="10 1 10"></Box>
+        </Shape>
+      </Transform>
+  
+      <!-- Step 5 -->
+      <Transform translation="15 4 -5">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.3 0.6 0.6"></Material>
+          </Appearance>
+          <Box size="10 1 10"></Box>
+        </Shape>
+      </Transform>
+  
+      <!-- Step 6 -->
+      <Transform translation="20 5 0">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.2 0.7 0.7"></Material>
+          </Appearance>
+          <Box size="10 1 10"></Box>
+        </Shape>
+      </Transform>
+  
+      <!-- Step 7 -->
+      <Transform translation="25 6 -5">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.1 0.8 0.8"></Material>
+          </Appearance>
+          <Box size="10 1 10"></Box>
+        </Shape>
+      </Transform>
+  
+      <!-- Step 8 -->
+      <Transform translation="30 7 0">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.0 0.9 0.9"></Material>
+          </Appearance>
+          <Box size="10 1 10"></Box>
+        </Shape>
+      </Transform>
+  
+      <!-- Step 9 -->
+      <Transform translation="35 8 -5">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.0 1.0 1.0"></Material>
+          </Appearance>
+          <Box size="10 1 10"></Box>
+        </Shape>
+      </Transform>
+    </Scene>
+  </X3D>
+
+{% endblock %}
