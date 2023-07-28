@@ -13,7 +13,7 @@
         .x3dom-canvas{
             width: 100%;
         }
-        #question {
+        .question {
             width: 30%;
         }
         .hover-container {
@@ -44,31 +44,18 @@
 
     <form action="" method="POST">
         <input id="question" name="question" value="{{ question }}"/>
-        <button type="submit" name="submit" value="create">Update</button>
-        <button type="submit" name="edit" value="edit">Edit</button>
+        <button type="submit" name="submit" value="update">update</button>
+        <button type="submit" name="save" value="edit">Save</button>
         <span class="hover-container">
             <span class="hover-text">Source Code</span>
-            <span class="tooltip">
-                {% if x3d %}{{ x3d }}{% else %}
-                &lt;X3D id='x3d' showStat='false' showLog='false' showProgress='bar'
-                version='3.3' noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'
-                width="100%" height="600px"&gt;                
-                {{ scene }}
-                &lt;/X3D&gt;{% endif %}
-            </span>
+            <span class="tooltip">{{ x3d }}</span>
         </span>
-        <input type="hidden" id="source" name="source" value="{{ scene }}"/>
+        <input type="hidden" id="source" name="source" value="{{ x3d }}"/>
     </form>
 
     <div class="x3dcontainer">
         {% if x3d %}
             {{ x3d |safe }}
-        {% else %}
-            <X3D id='x3d' showStat='false' showLog='false' showProgress='bar'
-            version='3.3' noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'
-            width="100%" height="600px">
-            {{ scene |safe }}
-            </X3D>
         {% endif %}
     </div>
 
